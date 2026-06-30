@@ -1,0 +1,34 @@
+/* Radia — motion layer. Loaded after styles.css, paired with motion.js.
+   Lenis plumbing, the scan-line, the shimmer, and a few overrides so the
+   JS-driven transforms never fight the CSS keyframes. Reduced-motion safe. */
+
+/* ----- Lenis smooth-scroll plumbing ----- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ----- When GSAP is driving, hand it the wheel ----- */
+.gsap-motion .reveal { transition: none; }            /* GSAP tweens opacity/transform itself */
+.gsap-motion .hero-glow { animation: none; }          /* GSAP owns the hero glow now */
+.gsap-motion .btn-primary { transition: box-shadow .25s, background .25s; } /* magnetic owns transform */
+
+/* ----- Scan-line sweep over the phone (the skin-scan beat) ----- */
+.phone { overflow: hidden; }                          /* clip the scan-line to the device */
+.scanline {
+  position: absolute; left: 0; right: 0; top: 2%; height: 66px;
+  z-index: 5; pointer-events: none; opacity: 0; mix-blend-mode: screen;
+  background: linear-gradient(to bottom,
+    transparent 0%, rgba(252,231,220,0) 28%, rgba(255,255,255,.92) 50%,
+    rgba(252,231,220,0) 72%, transparent 100%);
+  box-shadow: 0 0 26px 8px var(--glow);
+}
+
+/* ----- Shimmer across the hero gradient headline ----- */
+.shimmer { background-size: 220% auto; animation: radia-shimmer 6s linear infinite; }
+@keyframes radia-shimmer { to { background-position: 220% center; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .scanline { display: none; }
+  .shimmer { animation: none; }
+}
