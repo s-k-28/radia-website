@@ -93,18 +93,13 @@
     });
   }
 
-  // ---- Phone: scrubbed scan-line sweep (the "skin scan" beat) ----
-  // ponytail: animates `top`+opacity, never transform, so it can't fight the CSS float on .phone.
-  var stage = document.querySelector('.phone-stage');
-  if (stage) {
-    var scan = stage.querySelector('.scanline');
-    if (scan) {
-      gsap.fromTo(scan,
-        { top: '2%', opacity: 0 },
-        { top: '92%', opacity: 1, ease: 'none',
-          scrollTrigger: { trigger: stage, start: 'top 82%', end: 'bottom 45%', scrub: true } });
-    }
-  }
+  // ---- Live scan-line loop on the hero scan phone (the "scanning" beat) ----
+  // ponytail: animates `top`+opacity only, so it never fights any CSS transform.
+  document.querySelectorAll('.scan-phone .scanline').forEach(function (scan) {
+    gsap.fromTo(scan,
+      { top: '8%' },
+      { top: '86%', opacity: 1, duration: 2.1, ease: 'sine.inOut', repeat: -1, yoyo: true });
+  });
 
   // ---- Per-feature phone parallax (Apple-ish drift) ----
   gsap.utils.toArray('.feature .f-visual .phone').forEach(function (ph) {

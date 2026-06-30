@@ -42,7 +42,15 @@
     <span class="pill"><span class="dot"></span> AI Skin Analysis · New</span>
     <h1>Scan your skin.<br /><span class="grad-text shimmer">Unlock your glow.</span></h1>
     <p class="sub">Radia reads your face in seconds and builds a routine that actually works, with a Glow Score that climbs week after week.</p>
-    <div class="rating-row"><span class="stars">★★★★★</span> Loved by early testers · Free to start</div>
+    <div class="proof reveal">
+      <div class="avstack">
+        <span class="av" style="background:var(--a4)">MJ</span>
+        <span class="av" style="background:var(--jade)">DL</span>
+        <span class="av" style="background:var(--a3)">SK</span>
+        <span class="av" style="background:var(--a5)">AR</span>
+      </div>
+      <div class="proof-txt"><span class="stars">★★★★★</span>Loved by early testers · <strong>4.9</strong> rating · Free to start</div>
+    </div>
     <div class="cta-row" id="get">
       <div class="badges">
         <a class="store" href="#" aria-label="Download on the App Store">
@@ -58,17 +66,46 @@
   </div>
 
   <div class="wrap">
-    <div class="phone-stage">
-      <div class="phone-halo"></div>
-      <div class="chip left">
-        <span class="ic" style="background:var(--a1)">✨</span>
-        <span><span class="c-label">Glow Score</span><br /><span class="c-val accent" data-count="82">82</span></span>
+    <div class="hero-duo reveal">
+      <div class="duo-halo"></div>
+
+      <!-- LEFT — the scan -->
+      <div class="scan-wrap">
+        <div class="phone scan-phone">
+          <div class="scan-screen">
+            <svg class="scan-face" viewBox="0 0 120 140" fill="none" aria-hidden="true">
+              <path d="M60 30c14 0 24 12 24 28 0 18-11 32-24 32S36 76 36 58c0-16 10-28 24-28Z" stroke="var(--a4)" stroke-width="2.2" opacity=".75"/>
+              <path d="M26 134c5-19 17-30 34-30s29 11 34 30" stroke="var(--a4)" stroke-width="2.2" opacity=".75"/>
+              <circle cx="50" cy="56" r="2.4" fill="var(--a4)"/><circle cx="70" cy="56" r="2.4" fill="var(--a4)"/>
+              <path d="M54 73c3 3 9 3 12 0" stroke="var(--a4)" stroke-width="2.2" opacity=".7"/>
+            </svg>
+            <div class="scan-frame"><i></i><i></i><i></i><i></i></div>
+            <span class="scanline"></span>
+            <div class="scan-status"><span class="sdot"></span> Scanning your skin…</div>
+          </div>
+        </div>
       </div>
-      <div class="chip right">
-        <span class="ic" style="background:#E3F1EB; color:var(--jade)">💧</span>
-        <span><span class="c-label">Hydration</span><br /><span class="c-val" style="color:var(--jade)" data-count="18" data-prefix="+" data-suffix="%">+18%</span></span>
+
+      <!-- connector -->
+      <svg class="duo-arc" viewBox="0 0 150 70" fill="none" aria-hidden="true">
+        <path d="M6 26 C 52 2, 104 2, 140 40" stroke="var(--a4)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M140 40 l-15 0 M140 40 l-2 -15" stroke="var(--a4)" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+
+      <!-- RIGHT — the result -->
+      <div class="result-wrap">
+        <div class="phone result-phone">
+          <img src="./assets/results.png" alt="Radia skin analysis result with your Glow Score and report card" />
+        </div>
+        <div class="chip score">
+          <span class="ic" style="background:var(--a1)">✨</span>
+          <span><span class="c-label">Glow Score</span><br /><span class="c-val accent" data-count="82">82</span></span>
+        </div>
+        <div class="chip hydra">
+          <span class="ic" style="background:#E3F1EB; color:var(--jade)">💧</span>
+          <span><span class="c-label">Hydration</span><br /><span class="c-val" style="color:var(--jade)" data-count="18" data-prefix="+" data-suffix="%">+18%</span></span>
+        </div>
       </div>
-      <div class="phone reveal"><span class="scanline"></span><img src="./assets/today.png" alt="Radia app, your daily routine and Glow Score" /></div>
     </div>
   </div>
 </div>
